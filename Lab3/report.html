@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <ul>
+    <h1  style="color: brown;" >  Map Function : </h1>  
+    <ul>
+    <li>
+        map() is an ECMAScript5 (ES5) feature.
+    </li>
+       <li>        
+         <strong>map()</strong> method <strong>creates a new array</strong>
+          populated with the results of calling a provided function on every element in the calling array
+     </li> 
+     <li>
+         map() method is an iterative method.
+     </li>
+     <li>
+        map() creates a new array from calling a function for every array element
+     </li>
+     <li>
+        map() calls a function once for each element in an array
+     </li>
+     <li>
+        map() does not execute the function for empty elements.
+
+     </li>
+     <li>
+        map() does not change the original array.
+     </li>
+     <li>
+        Since map builds a new array, calling it without using the returned array is an anti-pattern; use forEach instead.
+     </li>
+    </ul>  
+     <h2>Example 1 :</h2>
+     <code style="color: rgb(57, 57, 109);">
+        <pre>    
+        const array1 = [1, 4, 9, 16];
+        const map1 = array1.map(x => x * 2);
+        console.log(map1); // Expected output: Array [2, 8, 18, 32]
+        </pre>
+
+     </code>
+
+     <h2>Syntax : </h2>
+     <code>  map((element) => { /* … */ })    </code>  <span> element is The current element being processed in the array.</span>  <br>
+     <code>  map((element, index) => { /* … */ })    </code> <span> index is Optional. The index of the current element.</span> <br>
+     <code>  map((element, index, array) => { /* … */ })     </code>  <span> The array map() was called upon. </span> <br>
+     <code>  map(callbackFn)   </code><br>
+     <code>  map(callbackFn, thisArg)  </code>   <span> thisArg is Optional  A value to use as this when executing callbackFn.</span>  <br>
+     <code>  map(function (element) { /* … */ })     </code> <br>
+     <code>  map(function (element, index) { /* … */ })    </code> <br>
+
+     <h2> Example 2 :</h2>
+     <code style="color: rgb(57, 57, 109);">
+      <pre>    
+         const persons = [
+         {firstname : "Malcom", lastname: "Reynolds"},
+         {firstname : "Kaylee", lastname: "Frye"},
+         {firstname : "Jayne", lastname: "Cobb"}
+          ];
+        
+          persons.map(getFullName);
+          
+          function getFullName(item) {
+             return [item.firstname,item.lastname].join(" "); // Expected output String : Malcom Reynolds,Kaylee Frye,Jayne Cobb
+          }
+      </pre>
+
+     </code>
+   </ul>
+
+   <ul>
+    <h1  style="color: brown;" >forEach : </h1>
+    <ul>  
+    <li>The forEach() method calls a function for each element in an array. </li>
+    <li> The forEach() method is not executed for empty elements. </li>
+    <li> The forEach() method executes a provided function once for each array element.    </li>
+    
+    </ul>
+    <h2>Example 1 :</h2>
+    <code style="color: rgb(57, 57, 109);">
+       <pre>    
+        let sum = 0;
+        const numbers = [65, 44, 12, 4];
+        numbers.forEach(myFunction);    //output : 125 (65+ 44+ 12+ 4)
+
+        function myFunction(item) {
+          sum += item;
+        }
+
+      
+       </pre>
+    </code>
+
+    <h2>Syntax :   (same as map) </h2> 
+    <code>  foEach((element) => { /* … */ })    </code>  <span> element is The current element being processed in the array.</span>  <br>
+    <code>  foEach((element, index) => { /* … */ })    </code> <span> index is Optional. The index of the current element.</span> <br>
+    <code>  foEach((element, index, array) => { /* … */ })     </code>  <span> The array foEach() was called upon. </span> <br>
+    <code>  foEach(callbackFn)   </code><br>
+    <code>  foEach(callbackFn, thisArg)  </code>   <span> thisArg is Optional  A value to use as this when executing callbackFn.</span>  <br>
+    <code>  foEach(function (element) { /* … */ })     </code> <br>
+    <code>  foEach(function (element, index) { /* … */ })    </code> <br>
+
+   </ul>
+
+   <ul>
+    <h1 style="color: brown;">foreach  vs map </h1>
+    <h2>forEach : </h2>
+      <ul>
+
+       <li>Returns undefined</li>
+        <li>executes a provided function once per array element</li>
+    </ul> 
+
+    <h2>map : </h2>
+    <ul>
+
+        <li>creates a new array with the results of calling a provided function on every element in this array </li>
+        <li>Returns new array with transformed elements, leaving back original array unchanged.</li>
+   </ul>
+  </ul>
+   
+
+
+
+</body>
+</html>

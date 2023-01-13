@@ -1,0 +1,16 @@
+   var countApple = 0
+    var countOrange = 0;
+    for (var i = 0; i < apples.length; i++) {
+        var distance = apples[i] + a;
+        if (distance >= s && distance <= t) {
+            countApple++;
+        }
+    }
+    for (var i = 0; i < oranges.length; i++) {
+        var distance = oranges[i] + b;
+        if (distance >= s && distance <= t) {
+            countOrange++;
+        }
+    }
+    console.log(countApple);
+    console.log(countOrange);
