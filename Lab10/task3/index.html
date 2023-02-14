@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+
+    <form >
+      <h2>Web Storage</h2>
+
+      
+        <div class="container">
+            <div class="username">
+          <label for="name"><b>Username</b></label>
+          <input  id="name" type="text" placeholder="Enter Username" name="uname" pattern="[A-Za-z]{5,}" required>
+          <span id="nameErr" class="validation">The username can be only alphanetic characters and more than 5 char</span>
+        </div>
+     <div class="">
+          <label for="email"><b>New Email</b></label>
+          <input id="email"  type="" placeholder="Enter New Email" name="email" pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" required>
+          <span id="emailErr" class="validation"> Email not include any special char except @ </span>
+      
+          <button id="btn" type="submit">Login</button>
+        </div>
+      </form>
+
+    <script src="src/script.js"></script>
+</body>
+</html>
