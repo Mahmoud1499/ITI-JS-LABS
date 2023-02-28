@@ -1,0 +1,4 @@
+<h1>The add of 1000,10,10,10 is 1030 </h1> 
+<h1>The sub of 1000,10,10,10 is 970 </h1> 
+<h1>The multip of 1000,10,10,10 is 1000000 </h1> 
+<h1>The div of 1000,10,10,10 is 1 </h1> 
