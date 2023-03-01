@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <link href="./style.css" type="text/css" rel="stylesheet" />
+    <link href="./favicon.ico" rel="icon" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Enter you data</h1>
+      <form
+        action="./welcome.html"
+        method="post"
+        class="row g-3 needs-validation m-4"
+        novalidate
+      >
+        <div class="col-md-4">
+          <label for="validationCustom01" class="form-label">Full name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="validationCustom01"
+            value="Mahmoud"
+            required
+            name="fullName"
+          />
+          <div class="valid-feedback">Looks good!</div>
+        </div>
+        <div class="col-md-4">
+          <label for="validationCustom02" class="form-label">phone</label>
+          <input
+            type="text"
+            class="form-control"
+            id="validationCustom02"
+            value="01091619325"
+            required
+            name="phone"
+          />
+          <div class="valid-feedback">Looks good!</div>
+        </div>
+        <div class="col-md-4">
+          <label for="validationCustomUsername">Email</label>
+          <div class="input-group has-validation">
+            <input
+              type="text"
+              class="form-control"
+              id="validationCustomUsername"
+              aria-describedby="inputGroupPrepend"
+              required
+              name="email"
+              value="mahmoudmahmed1499@gmail.com"
+            />
+            <div class="invalid-feedback">Please choose a username.</div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="validationCustom03" class="form-label">Address</label>
+          <input
+            type="text"
+            class="form-control"
+            id="validationCustom03"
+            required
+            name="address"
+            value="Alex"
+          />
+          <div class="invalid-feedback">Please provide a valid address.</div>
+        </div>
+
+        <div class="col-12">
+          <button class="btn btn-primary my-3" type="submit">
+            Submit form
+          </button>
+        </div>
+      </form>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
