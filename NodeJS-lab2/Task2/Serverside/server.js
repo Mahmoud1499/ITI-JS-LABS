@@ -45,7 +45,7 @@ http
           });
           res.write(myIcon);
           break;
-        case "/clients.json":
+        case "/Serverside/clients.json":
           res.writeHead(200, "ok", {
             "content-type": "application/json",
           });
