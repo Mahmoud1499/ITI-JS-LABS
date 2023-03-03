@@ -5,8 +5,12 @@ const fs = require("fs");
 let MainFileHTML = fs.readFileSync("../ClientSide/index.html").toString();
 let welcomeFileHTML = fs.readFileSync("../ClientSide/welcome.html").toString();
 let StyleCSS = fs.readFileSync("../ClientSide/style.css").toString();
+let Bootstrap = fs.readFileSync("../ClientSide/bootstrap.min.css").toString();
+
 let ScriptFile = fs.readFileSync("../ClientSide/script.js").toString();
 let myIcon = fs.readFileSync("../ClientSide/favicon.ico");
+let clientsJSON = fs.readFileSync("clients.json").toString();
+console.log("clientsJSON:", clientsJSON);
 
 let clientsArray = [];
 
@@ -27,6 +31,10 @@ http
           res.writeHead(200, "Ok", { "content-type": "text/css" });
           res.write(StyleCSS);
           break;
+        case "/bootstrap.min.css":
+          res.writeHead(200, "Ok", { "content-type": "text/css" });
+          res.write(Bootstrap);
+          break;
         case "/script.js":
           res.writeHead(300, "Hii", { "content-type": "text/javascript" });
           res.write(ScriptFile);
@@ -36,6 +44,12 @@ http
             "content-type": "image/vnd.microsoft.icon",
           });
           res.write(myIcon);
+          break;
+        case "/clients.json":
+          res.writeHead(200, "ok", {
+            "content-type": "application/json",
+          });
+          res.write(clientsJSON);
           break;
         default:
           res.write("<h1>No Page Found</h1>");
@@ -65,20 +79,27 @@ http
           email,
           address,
         };
+        data = fs.readFileSync("clients.json", "utf-8");
+        obj = JSON.parse(data);
+        // console.log(obj);
+        obj.forEach((arr) => {
+          clientsArray.push(arr);
+        });
         clientsArray.push(client);
         // console.log("=========", clientsArray);
       });
       req.on("end", () => {
-        welcomeFileHTML = welcomeFileHTML.replace("{fullName}", fullName);
-        welcomeFileHTML = welcomeFileHTML.replace("{phone}", phone);
-        welcomeFileHTML = welcomeFileHTML.replace("{email}", email);
-        welcomeFileHTML = welcomeFileHTML.replace("{address}", address);
+        welcomeFileHTML = welcomeFileHTML
+          .replace("{fullName}", fullName)
+          .replace("{phone}", phone)
+          .replace("{email}", email)
+          .replace("{address}", address);
         res.write(welcomeFileHTML);
 
         jsonString = JSON.stringify(clientsArray);
 
-        console.log(jsonString);
-        // fs.writeFileSync("./clients.json", jsonString);
+        // console.log(jsonString);
+        fs.writeFileSync("./clients.json", jsonString);
 
         res.end();
       });
