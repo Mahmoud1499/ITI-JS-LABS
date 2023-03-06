@@ -1,0 +1,9 @@
+h1 {
+  padding: 20px;
+  text-align: center;
+}
+
+form {
+  border: 2px solid black;
+  padding: 20px;
+}
